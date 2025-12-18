@@ -1,12 +1,469 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Hello World!</title>
-</head>
-<body>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CI/CD Practice *||* Nginx + Ansible + GitHub </title>
 
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#111a2e;
+      --accent:#4f46e5;
+      --accent2:#22c55e;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --card:#0f172a;
+      --border:rgba(255,255,255,.10);
+    }
+    body{
+      background: radial-gradient(1000px 600px at 10% 10%, rgba(79,70,229,.25), transparent 60%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(34,197,94,.18), transparent 55%),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    .navbar{
+      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, .65) !important;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero{
+      padding: 5.5rem 0 3rem;
+    }
+    .hero-badge{
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      padding: .35rem .65rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(15, 23, 42, .55);
+      font-size: .9rem;
+    }
+    .glow{
+      box-shadow: 0 0 0 1px rgba(79,70,229,.25), 0 20px 60px rgba(79,70,229,.15);
+    }
+    .section{
+      padding: 3.5rem 0;
+    }
+    .card{
+      background: rgba(15, 23, 42, .75);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+    .card-title{ color: #fff; }
+    .muted{ color: var(--muted); }
+    .pill{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .35rem .6rem;
+      font-size: .85rem;
+      display: inline-block;
+      margin: .2rem .25rem .2rem 0;
+    }
+    .step{
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: .75rem 0;
+      border-bottom: 1px dashed rgba(255,255,255,.12);
+    }
+    .step:last-child{ border-bottom: 0; }
+    .step-num{
+      width: 34px; height: 34px;
+      display: grid; place-items: center;
+      border-radius: 10px;
+      background: rgba(79,70,229,.18);
+      border: 1px solid rgba(79,70,229,.35);
+      color: #c7d2fe;
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: .15rem .35rem;
+      border-radius: 8px;
+      color: #fff;
+      font-size: .9rem;
+    }
+    footer{
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0;
+      color: var(--muted);
+    }
+    a { color: #c7d2fe; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .btn-primary{
+      background: var(--accent);
+      border-color: rgba(79,70,229,.65);
+    }
+    .btn-outline-light{
+      border-color: rgba(255,255,255,.25);
+    }
+    .mini{
+      font-size: .95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#top">🚀 CI/CD Lab</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+<<<<<<< HEAD
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pipeline">Pipeline</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stack">Tech Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="#guide">Git Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+=======
 <h1>Hello world!</h1>
 <p>This is the first file in my new Git Repo. I am practicing CI/CD with nginix and automation with Ansible</p >
+<<<<<<< HEAD
+=======
+>>>>>>> 43ef046 (Update index.html)
+>>>>>>> hello-world-images
 
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="hero-badge mb-3">
+            <span class="badge text-bg-success">Live</span>
+            <span>Practice repo for Nginx + Ansible + CI/CD</span>
+          </div>
+
+          <h1 class="display-5 fw-bold mb-3">
+            Hello World 👋 <br class="d-none d-md-block">
+            My Deployment & Automation Playground
+          </h1>
+
+          <p class="lead muted mb-4">
+            This single-page site is deployed using <b>Nginx</b> and automated with <b>Ansible</b>.
+            I use it to practice Git workflows, CI/CD pipelines, and infrastructure basics.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-lg glow" href="#pipeline">View Pipeline</a>
+            <a class="btn btn-outline-light btn-lg" href="#guide">Git Branch Guide</a>
+            <a class="btn btn-outline-light btn-lg" href="#stack">Tech Stack</a>
+          </div>
+
+          <div class="mt-4">
+            <span class="pill">✅ Nginx</span>
+            <span class="pill">✅ Ansible</span>
+            <span class="pill">✅ GitHub Actions</span>
+            <span class="pill">✅ Linux</span>
+            <span class="pill">✅ HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card p-4 glow">
+            <h5 class="card-title mb-2">Project Goals</h5>
+            <p class="muted mini mb-3">What I’m practicing in this repo:</p>
+            <ul class="mb-0">
+              <li>Deploy static website with Nginx</li>
+              <li>Automate provisioning & config using Ansible</li>
+              <li>Build CI/CD workflows (test → build → deploy)</li>
+              <li>Use branching, PRs, and code reviews</li>
+              <li>Improve documentation & version control habits</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card p-4">
+            <h3 class="card-title">About This Repo</h3>
+            <p class="muted mb-3">
+              This repository is a learning sandbox where I practice real-world DevOps tasks.
+              The website is intentionally simple so I can focus on automation, deployment, and CI/CD.
+            </p>
+            <div>
+              <span class="pill">Infrastructure Basics</span>
+              <span class="pill">Configuration Management</span>
+              <span class="pill">Release Process</span>
+              <span class="pill">Monitoring Mindset</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card p-4">
+            <h3 class="card-title">What I’m Learning</h3>
+            <div class="step">
+              <div class="step-num">A</div>
+              <div>
+                <div class="fw-semibold">Ansible Playbooks</div>
+                <div class="muted mini">Roles, templates, variables, idempotency, and inventories.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">N</div>
+              <div>
+                <div class="fw-semibold">Nginx Hosting</div>
+                <div class="muted mini">Server blocks, static assets, permissions, logs.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">C</div>
+              <div>
+                <div class="fw-semibold">CI/CD</div>
+                <div class="muted mini">GitHub Actions pipelines, artifacts, and deployments.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section id="pipeline" class="section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="card p-4 glow">
+            <h3 class="card-title">CI/CD Pipeline Flow</h3>
+            <p class="muted mini mb-3">Example workflow (you can match this with GitHub Actions):</p>
+
+            <div class="step">
+              <div class="step-num">1</div>
+              <div>
+                <div class="fw-semibold">Code Push / Pull Request</div>
+                <div class="muted mini">Triggers pipeline when commits are pushed or PR is opened.</div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-num">2</div>
+              <div>
+                <div class="fw-semibold">Lint / Validate</div>
+                <div class="muted mini">Check HTML formatting, verify Ansible syntax (optional).</div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-num">3</div>
+              <div>
+                <div class="fw-semibold">Build / Package</div>
+                <div class="muted mini">Bundle static files as an artifact.</div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-num">4</div>
+              <div>
+                <div class="fw-semibold">Deploy</div>
+                <div class="muted mini">Copy files to server + reload Nginx via Ansible.</div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-num">5</div>
+              <div>
+                <div class="fw-semibold">Smoke Test</div>
+                <div class="muted mini">Check HTTP 200 and validate content is served correctly.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card p-4">
+            <h3 class="card-title">Deployment Checklist</h3>
+            <p class="muted mini">Quick reminders before deploying:</p>
+            <ul class="mb-0">
+              <li>Ensure server is reachable (SSH)</li>
+              <li>Nginx config is valid</li>
+              <li>Correct permissions for /var/www/html</li>
+              <li>Ansible inventory is correct</li>
+              <li>Rollback plan available (previous artifact)</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack" class="section">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+        <div>
+          <h3 class="mb-1">Tech Stack</h3>
+          <div class="muted mini">Tools used to build, deploy, and automate this site.</div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card p-4 h-100">
+            <h5 class="card-title">Frontend</h5>
+            <p class="muted mini">HTML + Bootstrap + CSS</p>
+            <div class="pill">Bootstrap 5</div>
+            <div class="pill">Responsive Layout</div>
+            <div class="pill">Custom CSS</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card p-4 h-100">
+            <h5 class="card-title">Web Server</h5>
+            <p class="muted mini">Hosting static content</p>
+            <div class="pill">Nginx</div>
+            <div class="pill">Server Blocks</div>
+            <div class="pill">Logs</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card p-4 h-100">
+            <h5 class="card-title">Automation</h5>
+            <p class="muted mini">Provisioning & config</p>
+            <div class="pill">Ansible</div>
+            <div class="pill">Playbooks</div>
+            <div class="pill">Templates</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card p-4 h-100">
+            <h5 class="card-title">CI/CD</h5>
+            <p class="muted mini">Build + deploy pipeline</p>
+            <div class="pill">GitHub Actions</div>
+            <div class="pill">Artifacts</div>
+            <div class="pill">Deploy Jobs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIT GUIDE -->
+  <section id="guide" class="section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card p-4">
+            <h3 class="card-title">Create a New Branch (Editor / GitHub)</h3>
+            <p class="muted mini">
+              When you create a new branch from GitHub’s editor, it will suggest a branch name.
+              Use short, clear naming like:
+            </p>
+            <div class="mb-3">
+              <span class="pill">feature/homepage</span>
+              <span class="pill">fix/nginx-config</span>
+              <span class="pill">chore/ansible-role</span>
+            </div>
+            <p class="muted mini mb-0">
+              Tip: Always open a Pull Request for review and keep commits small.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card p-4 glow">
+            <h3 class="card-title">Common Git Commands</h3>
+            <p class="muted mini">Quick cheatsheet:</p>
+            <div class="mb-2"><span class="kbd">git checkout -b feature/my-change</span> <span class="muted mini">create branch</span></div>
+            <div class="mb-2"><span class="kbd">git status</span> <span class="muted mini">check changes</span></div>
+            <div class="mb-2"><span class="kbd">git add .</span> <span class="muted mini">stage</span></div>
+            <div class="mb-2"><span class="kbd">git commit -m "Update homepage"</span> <span class="muted mini">commit</span></div>
+            <div class="mb-2"><span class="kbd">git push -u origin feature/my-change</span> <span class="muted mini">push</span></div>
+            <div class="mb-0"><span class="kbd">git pull</span> <span class="muted mini">sync latest</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="card p-4">
+            <h3 class="card-title">Contact / Notes</h3>
+            <p class="muted">
+              This page is a practice project. If you’re reviewing it, feel free to suggest improvements:
+              add monitoring, better rollback, or secure deployments.
+            </p>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label muted">Name</label>
+                <input class="form-control bg-dark text-light border-0" placeholder="Your name (demo only)" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label muted">Email</label>
+                <input class="form-control bg-dark text-light border-0" placeholder="your@email.com (demo only)" />
+              </div>
+              <div class="col-12">
+                <label class="form-label muted">Message</label>
+                <textarea class="form-control bg-dark text-light border-0" rows="4" placeholder="This form is for UI demo only."></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="button">Send (Demo)</button>
+                <span class="muted mini ms-2">No backend connected.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card p-4">
+            <h3 class="card-title">Next Improvements</h3>
+            <ul class="mb-0">
+              <li>Add GitHub Actions: HTML lint + deployment job</li>
+              <li>Create Ansible role: nginx + site deploy</li>
+              <li>Add SSL with Let’s Encrypt</li>
+              <li>Add health check endpoint & monitoring</li>
+              <li>Add versioned releases + rollback</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container d-flex justify-content-between flex-wrap gap-2">
+      <div>© 2025 CI/CD Lab • Built with Bootstrap + custom CSS</div>
+      <div class="muted">Deployed via Nginx • Automated with Ansible</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
