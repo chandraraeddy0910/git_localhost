@@ -14,5 +14,20 @@ CREATE TABLE `auto_stats` (
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=3
+AUTO_INCREMENT=3;
+
+
+CREATE TABLE `auto_stat_casinos` (
+	`entry_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`c_ts` INT(10) UNSIGNED NOT NULL,
+	`stat_id` INT(10) UNSIGNED NOT NULL,
+	`casino_id` INT(10) UNSIGNED NOT NULL,
+	PRIMARY KEY (`entry_id`) USING BTREE,
+	INDEX `stat_id` (`stat_id`, `casino_id`) USING BTREE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=8
 ;
+
+
